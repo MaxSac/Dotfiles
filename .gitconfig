@@ -1,0 +1,11 @@
+[user]
+	name = Maximilian Sackel
+	email = maximilian.sackel@gmx.de
+[pull]
+	rebase = true
+[rebase]
+	stat = true
+[merge]
+	conflictstyle = diff3
+[core]
+	editor = vim
