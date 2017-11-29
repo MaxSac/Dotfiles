@@ -1,0 +1,13 @@
+!vim: ft=xdefaults commentstring=!%s
+
+! URXVT SETTINGS
+URxvt.borderless:             true
+URxvt.scrollBar:              false
+URxvt.saveLines:              2048
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+! URxvt.cursorBlink:            false
+URxvt.transparent:            true
+URxvt.shading:                15
+URxvt.depth:                  32
+URxvt.font: xft:Bitstream Vera Sans Mono:pixelsize=18

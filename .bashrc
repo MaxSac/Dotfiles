@@ -123,3 +123,4 @@ export PATH="/home/maximilian/.local/anaconda3/bin:$PATH"
 export PATH="/home/maximilian/.local/bin:$PATH"
 export PATH="/home/maximilian/.local/texlive/2017/bin/x86_64-linux:$PATH"
 (wal -r)
+
