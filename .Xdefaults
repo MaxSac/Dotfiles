@@ -6,8 +6,11 @@ URxvt.scrollBar:              false
 URxvt.saveLines:              2048
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.keysym.Shift-Control-C: perl:clipboard:copy
-! URxvt.cursorBlink:            false
 URxvt.transparent:            true
 URxvt.shading:                15
 URxvt.depth:                  32
 URxvt.font: xft:Bitstream Vera Sans Mono:pixelsize=18
+
+URxvt.perl-ext-common:   font-size,default,matcher,url-select,keyboard-select
+URxvt.url-select.launcher: firefox
+URxvt.matcher.button:    1
