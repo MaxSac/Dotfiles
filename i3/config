@@ -11,6 +11,25 @@
 
 set $mod Mod1
 
+# -- .Xresources colors -- #
+set $fullblack #000000
+set_from_resource $black .color0
+set_from_resource $brightblack .color8
+set_from_resource $red .color1
+set_from_resource $brightred .color9
+set_from_resource $green .color2
+set_from_resource $brightgreen .color10
+set_from_resource $yellow .color3
+set_from_resource $brightyellow .color11
+set_from_resource $blue .color4
+set_from_resource $brightblue .color12
+set_from_resource $magenta .color5
+set_from_resource $brightmagenta .color13
+set_from_resource $cyan .color6
+set_from_resource $brightcyan .color14
+set_from_resource $white .color7
+set_from_resource $brightwhite .color15
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font opensans 10
@@ -133,6 +152,7 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 assign [class="Firefox"] $workspace2 
 assign [class="Thunderbird"] $workspace3 
 assign [class="TelegramDesktop"] $workspace9 
+assign [class="Skype"] $workspace9 
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -170,24 +190,6 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 
-# -- .Xresources colors -- #
-set $fullblack #000000
-set_from_resource $black .color0
-set_from_resource $brightblack .color8
-set_from_resource $red .color1
-set_from_resource $brightred .color9
-set_from_resource $green .color2
-set_from_resource $brightgreen .color10
-set_from_resource $yellow .color3
-set_from_resource $brightyellow .color11
-set_from_resource $blue .color4
-set_from_resource $brightblue .color12
-set_from_resource $magenta .color5
-set_from_resource $brightmagenta .color13
-set_from_resource $cyan .color6
-set_from_resource $brightcyan .color14
-set_from_resource $white .color7
-set_from_resource $brightwhite .color15
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -217,7 +219,7 @@ new_window pixel 4
 
 
 # screen locker (first move to "safe" workspace without any chat app)
-bindsym Control+$mod+l exec i3-msg workspace 1 && i3lock -c 111111 -d
+bindsym Control+$mod+l exec i3-msg workspace 1 && i3lock -c 000000 -d
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -c 1 -- sset Master 3%+  #increase sound volume
