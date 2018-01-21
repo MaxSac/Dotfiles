@@ -218,21 +218,20 @@ client.focused_inactive #9b9b9b #9b9b9b #fdf6e3		#000000 	$black
 new_window pixel 4
 
 
-# screen locker (first move to "safe" workspace without any chat app)
-bindsym Control+$mod+l exec i3-msg workspace 1 && i3lock -c 000000 -d
-
-# Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -c 1 -- sset Master 3%+  #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -c 1 -- sset Master 3%- #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
-
-# Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+# # screen locker (first move to "safe" workspace without any chat app)
+# bindsym Control+$mod+l exec i3-msg workspace 1 && i3lock -c 000000 -d
+# 
+# # Pulse Audio controls
+# bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -c 1 -- sset Master 3%+  #increase sound volume
+# bindsym XF86AudioLowerVolume exec --no-startup-id amixer -c 1 -- sset Master 3%- #decrease sound volume
+# bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+# 
+# # Sreen brightness controls
+# bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+# bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 
 # autostart
 exec --no-startup-id redshift -l 51.4:7.4
-exec /home/maximilian/.local/bin/wal -R
 exec --no-startup-id setxkbmap gb
 
