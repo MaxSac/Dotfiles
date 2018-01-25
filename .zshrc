@@ -64,6 +64,7 @@ plugins=(
   colored-man-pages
   cp
   zsh-syntax-highlighting
+  archlinux
 )
 
 source $ZSH/oh-my-zsh.sh
