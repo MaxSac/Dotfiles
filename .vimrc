@@ -12,6 +12,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-surround'		" simple set brackets and so on
 Plugin 'scrooloose/nerdtree'	" for file manaeging
 Plugin 'bling/vim-airline'		" Powerline row for a simpler overview
+Plugin 'lervag/vimtex'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -31,3 +32,4 @@ set textwidth=80				" convention linelength
 
 au BufNewFile,BufRead *.py
 	\ set smartindent
+
