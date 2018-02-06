@@ -219,8 +219,9 @@ new_window pixel 4
 
 
 # screen locker (first move to "safe" workspace without any chat app)
-bindsym Control+$mod+l exec i3-msg workspace 1 && i3lock -c 000000 -d
- 
+bindsym Control+$mod+l exec /home/maximilian/.local/i3lock-color/lock.sh 
+#bindsym Control+$mod+l exec i3-msg workspace 1 && exec /home/maximilian/.local/i3lock-color/lock.sh 
+
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 3%+
   #increase sound volume
