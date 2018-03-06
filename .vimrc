@@ -16,6 +16,7 @@ Plugin 'lervag/vimtex'          " make tex document compiled while writing
 Plugin 'shougo/deoplete.nvim'	" autocompletion while working
 Plugin 'zchee/deoplete-jedi'
 Plugin 'ervandew/supertab'
+Plugin 'tpope/vim-commentary'   " automatically comment stuff out
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

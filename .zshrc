@@ -96,3 +96,4 @@ source ~/.bash_profile
 # For a full list of active aliases, run `alias`.
 alias zshconfig="vim ~/.zshrc"
 alias weather="curl http://wttr.in/Dortmund"
+alias battery_stat='upower -i /org/freedesktop/UPower/devices/DisplayDevice'
