@@ -34,15 +34,19 @@ set foldenable                  " enable folding
 set foldnestmax=10              " 10 nested fold max
 set textwidth=80                " convention linelength
 
+" Some settings for deoplete which is a completation software.
+call deoplete#enable() 								
 let g:python3_host_prog = '/usr/bin/python3' "add python path for nvim
 
-" Some settings for deoplete which is a completation software.
-call deoplete#enable() 								" Use deoplete.
-if !exists('g:deoplete#omni#input_patterns') 		" add vimtex to deoplete
-    let g:deoplete#omni#input_patterns = {}
-endif
-    let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete         
-let g:vimtex_fold_enabled = 1 						" auto folding for TeX
+au BufNewFile,BufRead *.tex set ft=tex
+autocmd Filetype tex
+\	if !exists('g:deoplete#omni#input_patterns') 			|
+\   	let g:deoplete#omni#input_patterns = {} 			|
+\ 	endif 													|
+\    	let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete 			|
+\ 	let g:vimtex_fold_enabled = 1 							|
+let g:vimtex_compiler_latexmk = {'build_dir': 'build'} 	
+
 hi Pmenu ctermbg=8 guibg=#606060 					" changing default color
 
 let g:SuperTabDefaultCompletionType = "<c-n>" 		" Invert Tab order

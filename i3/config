@@ -118,7 +118,7 @@ bindsym $mod+Tab workspace back_and_forth
 set $workspace1 "1: &#xf120;" 
 set $workspace2 "2: &#xf269;" 
 set $workspace3 "3: &#xf0e0;" 
-set $workspace4 "4" 
+set $workspace4 "4: &#xf1c1;" 
 set $workspace5 "5" 
 set $workspace6 "6" 
 set $workspace7 "7" 
@@ -240,3 +240,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -inc -5 # increase screen brightne
 # autostart
 exec --no-startup-id redshift -l 51.4:7.4
 exec --no-startup-id setxkbmap gb
+
+
+gaps inner 20
+smart_gaps on
