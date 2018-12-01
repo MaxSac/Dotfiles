@@ -200,23 +200,23 @@ bar {
 		position bottom		# <top|bottom> 
 #		status_command conky -c ~/Dotfiles/.conkyrc
 #		position bottom		# <top|bottom> 
-	colors{
-		background $black
-        statusline $white
-        separator  $blue
-
-		focused_workspace 	$black $black $white
-		active_workspace 	$black $black $brightblack
-		inactive_workspace 	$black $black $brightblack
- 		urgent_workspace 	$black $black $brightred
-	}
+#	colors{
+#		background $black
+#        statusline $white
+#        separator  $blue
+#
+#		focused_workspace 	$black $black $white
+#		active_workspace 	$black $black $brightblack
+#		inactive_workspace 	$black $black $brightblack
+# 		urgent_workspace 	$black $black $brightred
+#	}
 }
 
 
 # class                 border  backgr. text 		indicator 	child_border
-client.focused        	$white 	$white  $black		$brightred 	$white
-client.unfocused 		$black 	$black	$white		$brightred	$black
-client.focused_inactive #9b9b9b #9b9b9b #fdf6e3		#000000 	$black
+# client.focused        	$white 	$white  $black		$brightred 	$white
+# client.unfocused 		$black 	$black	$white		$brightred	$black
+# client.focused_inactive #9b9b9b #9b9b9b #fdf6e3		#000000 	$black
 
 # The same as new_window none
 new_window pixel 4
@@ -238,9 +238,10 @@ bindsym XF86MonBrightnessDown exec xbacklight -inc -5 # increase screen brightne
 
 
 # autostart
-exec --no-startup-id redshift -l 51.4:7.4
+exec --no-startup-id redshift
 # exec --no-startup-id setxkbmap gb
 exec xmodmap ~/.Xmodmap
+exec --no-startup-id gnome-flashback
 
 
 gaps inner 20

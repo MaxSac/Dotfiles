@@ -1,6 +1,7 @@
-DOTFILES = .Xdefaults .vimrc .gitconfig
+DOTFILES = .Xdefaults .vimrc .gitconfig .config
+
+all: link
 
 
 link: $(DOTFILES)
-	$(foreach file, $(DOTFILES), ln -fnv $(file) $(HOME);)
-	  
+	@command $(foreach file, $(DOTFILES), ln -rsf $(file) $(HOME);)
