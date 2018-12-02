@@ -1,0 +1,8 @@
+rofi.lines:    			3
+rofi.width:         	100 
+rofi.padding:       	600
+rofi.font:	 			DejaVu Sans Mono 52
+rofi.seperator-style:   none 
+rofi.line-margin: 		10
+rofi.auto-select: 		true
+rofi.theme: 			~/.cache/wal/colors-rofi-dark.rasi 

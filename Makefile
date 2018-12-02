@@ -1,4 +1,4 @@
-DOTFILES = .Xdefaults .vimrc .gitconfig .config
+DOTFILES = .Xdefaults .vimrc .gitconfig .config .zshrc
 
 all: link
 

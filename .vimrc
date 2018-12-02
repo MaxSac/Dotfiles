@@ -57,7 +57,7 @@ autocmd Filetype tex
 \ 	endif 													|
 \    	let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete 			|
 \ 	let g:vimtex_fold_enabled = 1 							|
-let g:vimtex_compiler_latexmk = {'build_dir': 'bui 			" python formatingld'} 	
+let g:vimtex_compiler_latexmk = {'build_dir': 'build'}
 let g:vimtex_view_general_viewer = 'zathura'
 
 hi Pmenu ctermbg=8 guibg=#606060 					" changing default color
