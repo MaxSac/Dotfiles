@@ -1,1 +1,0 @@
-/home/maximilian/.vimrc
