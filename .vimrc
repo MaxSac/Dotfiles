@@ -1,73 +1,108 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-surround'     " simple set brackets and so on
 Plugin 'scrooloose/nerdtree'    " for file manaeging
 Plugin 'bling/vim-airline'      " Powerline row for a simpler overview
+Plugin '907th/vim-auto-save'
+    let g:auto_save = 1
+    let g:auto_save_events = ["InsertLeave", "TextChanged"]
+    let g:auto_save_silent = 1
 Plugin 'lervag/vimtex'          " make tex document compiled while writing
+    let g:vimtex_compiler_progname = 'nvr' |
+    let g:vimtex_view_mode='zathura' |
+    let g:vimtex_view_method='zathura'  |
+    let g:vimtex_viewer_general='zathura'  
+    let g:vimtex_compiler_latexmk = {'build_dir': 'build'} 
+    let g:vimtex_fold_enabled = 0
+    let g:vimtex_view_automatic = 0
+    let g:tex_flavor = 'latex'
+    let g:vimtex_quickfix_mode = 0
+    let g:vimtex_complete_close_braces = 1
+    let g:vimtex_complete_recursive_bib = 1
 Plugin 'shougo/deoplete.nvim'	" autocompletion while working
+    let g:deoplete#enable_at_startup = 1
 Plugin 'zchee/deoplete-jedi'
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-commentary'   " automatically comment stuff out
 Plugin 'SirVer/ultisnips' 		" snippets engin for closely everthing
+    let g:UltiSnipsExpandTrigger="<tab>"
+    let g:UltiSnipsJumpForwardTrigger="<c-b>"
+    let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+    let g:UltiSnipsEditSplit="vertical"
 Plugin 'honza/vim-snippets' 	" snippets dict 
-Plugin 'ambv/black' 			" python formating
 
-Plugin 'altercation/vim-colors-solarized'
-
-" All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-map <C-n> :NERDTreeToggle<CR>
+" enable syntax processing
+syntax enable                   
+
+" make ESC reachable for fingers
 inoremap jj <ESC>
-nnoremap <space> za             " space open/closes folds
 
-syntax enable                   " enable syntax processing
-set tabstop=4                   " number of visual spaces per TAB
-set number relativenumber 		" show line numbers
-set cursorline                  " highlight current line
-set foldenable                  " enable folding
-set foldnestmax=10              " 10 nested fold max
-set textwidth=80                " convention linelength
+" space open/closes folds
+nnoremap <space> za                 
+" remove highlighted text
+nnoremap <silent> <C-l> :nohl<CR>   
+" move vim splits
+nnoremap <C-J> <C-W><C-J> 
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+
+map <C-n> :NERDTreeToggle<CR>
+map <C-s> :set spell<CR>
+
+
+" make tab great again
+set tabstop=4         
+set shiftwidth=4
+set expandtab
+" redraw only when we need to.
+set lazyredraw                  
+" highlight current line and show linenumbers
+set number relativenumber 		
+set cursorline                  
+" enable folding
+set foldenable                  
+set foldmethod=indent   
+" convention linelength
+set textwidth=80                
 set spelllang=de_de
+" more natural split opening 
+set splitbelow
+set splitright
 
-hi CursorLineNr ctermfg=white cterm=bold 		" change cursorline number color
-hi SpellBad ctermfg=red cterm=bold ctermbg=None	" change color missedspelled words
 
-autocmd BufWritePost *.py 
-\ execute ':Black'
+hi CursorLineNr 	
+    \ ctermfg=white 	
+	\ cterm=bold 		
+hi SpellBad 		
+	\ ctermfg=red 
+	\ cterm=bold 
+	\ ctermbg=None
+hi Pmenu 
+    \ ctermbg=8 
+    \ guibg=#606060 					
+hi Folded 
+    \ ctermfg=darkgrey
+    \ ctermbg=None
+    \ cterm=bold
+hi Comment
+    \ ctermfg=darkgrey
+    \ ctermbg=None
+    \ cterm=italic
 
 " Some settings for deoplete which is a completation software.
-call deoplete#enable() 								
-let g:python3_host_prog = '/home/maximilian/.local/anaconda3/bin/python3' "add python path for nvim
+let g:python3_host_prog = '/home/maximilian/miniconda3/bin/python3' "add python path for nvim
 
-au BufNewFile,BufRead *.tex set ft=tex
-autocmd Filetype tex
-\	if !exists('g:deoplete#omni#input_patterns') 			|
-\   	let g:deoplete#omni#input_patterns = {} 			|
-\ 	endif 													|
-\    	let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete 			|
-\ 	let g:vimtex_fold_enabled = 1 							|
-let g:vimtex_compiler_latexmk = {'build_dir': 'build'}
-let g:vimtex_view_general_viewer = 'zathura'
-
-hi Pmenu ctermbg=8 guibg=#606060 					" changing default color
-let g:SuperTabDefaultCompletionType = "<c-n>" 		" Invert Tab order
-
+" let g:SuperTabDefaultCompletionType = "<c-n>" 		" Invert Tab order
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
