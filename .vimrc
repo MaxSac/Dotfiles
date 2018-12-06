@@ -35,6 +35,10 @@ Plugin 'SirVer/ultisnips' 		" snippets engin for closely everthing
     let g:UltiSnipsJumpBackwardTrigger="<c-z>"
     let g:UltiSnipsEditSplit="vertical"
 Plugin 'honza/vim-snippets' 	" snippets dict 
+Plugin 'plasticboy/vim-markdown'
+    let g:tex_conceal = ""
+    let g:vim_markdown_math = 1
+    let g:vim_markdown_autowrite = 1
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -48,13 +52,12 @@ inoremap jj <ESC>
 " space open/closes folds
 nnoremap <space> za                 
 " remove highlighted text
-nnoremap <silent> <C-l> :nohl<CR>   
+nnoremap <silent> <C-r> :nohl<CR>   
 " move vim splits
 nnoremap <C-J> <C-W><C-J> 
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
 
 map <C-n> :NERDTreeToggle<CR>
 map <C-s> :set spell<CR>
@@ -74,10 +77,15 @@ set foldenable
 set foldmethod=indent   
 " convention linelength
 set textwidth=80                
+" spell settings
 set spelllang=de_de
+set spellfile=$HOME/.config/nvim/spell/de.utf-8.add
+set spellfile+=$HOME/.config/nvim/spell/physics.add
 " more natural split opening 
 set splitbelow
 set splitright
+" better markdown readableity
+set conceallevel=2
 
 
 hi CursorLineNr 	
