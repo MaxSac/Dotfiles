@@ -1,5 +1,5 @@
-.config
+.config/*
 !.config/i3
 !.config/redshift
 !.config/rofi
-!.config/polybar
+.config/polybar
