@@ -1,6 +1,6 @@
 [Default Applications]
-x-scheme-handler/mailto=userapp-Thunderbird-JNMQTZ.desktop
-message/rfc822=userapp-Thunderbird-JNMQTZ.desktop
+x-scheme-handler/mailto=userapp-Thunderbird-NTGOTZ.desktop
+message/rfc822=userapp-Thunderbird-NTGOTZ.desktop
 x-scheme-handler/http=firefox.desktop
 x-scheme-handler/https=firefox.desktop
 x-scheme-handler/ftp=firefox.desktop
@@ -14,8 +14,8 @@ application/x-extension-xhtml=firefox.desktop
 application/x-extension-xht=firefox.desktop
 
 [Added Associations]
-x-scheme-handler/mailto=userapp-Thunderbird-C79STZ.desktop;userapp-Thunderbird-JNMQTZ.desktop;
-message/rfc822=userapp-Thunderbird-C79STZ.desktop;userapp-Thunderbird-JNMQTZ.desktop;
+x-scheme-handler/mailto=userapp-Thunderbird-C79STZ.desktop;userapp-Thunderbird-JNMQTZ.desktop;userapp-Thunderbird-NTGOTZ.desktop;
+message/rfc822=userapp-Thunderbird-C79STZ.desktop;userapp-Thunderbird-JNMQTZ.desktop;userapp-Thunderbird-NTGOTZ.desktop;
 x-scheme-handler/http=firefox.desktop;
 x-scheme-handler/https=firefox.desktop;
 x-scheme-handler/ftp=firefox.desktop;

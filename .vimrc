@@ -19,7 +19,7 @@ Plugin 'lervag/vimtex'          " make tex document compiled while writing
     let g:vimtex_viewer_general='zathura'  
     let g:vimtex_compiler_latexmk = {'build_dir': 'build'} 
     let g:vimtex_fold_enabled = 0
-    let g:vimtex_view_automatic = 0
+    " let g:vimtex_view_automatic = 0
     let g:tex_flavor = 'latex'
     let g:vimtex_quickfix_mode = 0
     let g:vimtex_complete_close_braces = 1
@@ -28,6 +28,7 @@ Plugin 'shougo/deoplete.nvim'	" autocompletion while working
     let g:deoplete#enable_at_startup = 1
 Plugin 'zchee/deoplete-jedi'
 Plugin 'ervandew/supertab'
+    let g:SuperTabDefaultCompletionType = "<c-n>" 		" Invert Tab order
 Plugin 'tpope/vim-commentary'   " automatically comment stuff out
 Plugin 'SirVer/ultisnips' 		" snippets engin for closely everthing
     let g:UltiSnipsExpandTrigger="<tab>"
@@ -39,6 +40,7 @@ Plugin 'plasticboy/vim-markdown'
     let g:tex_conceal = ""
     let g:vim_markdown_math = 1
     let g:vim_markdown_autowrite = 1
+Plugin 'vimwiki/vimwiki'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -109,8 +111,4 @@ hi Comment
 
 " Some settings for deoplete which is a completation software.
 let g:python3_host_prog = '/home/maximilian/miniconda3/bin/python3' "add python path for nvim
-
-" let g:SuperTabDefaultCompletionType = "<c-n>" 		" Invert Tab order
-
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 
