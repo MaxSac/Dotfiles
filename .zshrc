@@ -26,7 +26,7 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   colored-man-pages
-  git 
+  git
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
@@ -37,4 +37,11 @@ source $ZSH/oh-my-zsh.sh
 
 # aliases
 alias vim="nvim"
+# activate conda
+. $HOME/miniconda3/etc/profile.d/conda.sh
+# conda activate
+alias wake="sudo etherwake 50:E5:49:50:FA:E8 -i enp0s25"
+# alias suspend='betterlockscreen -l & systemctl suspend '
 
+export PYTHONPATH=${PYTHONPATH}:/usr/local/lib/
+export C_INCLUDE_PATH=${C_INCLUDE_PATH}:${HOME}/usr/local/lib

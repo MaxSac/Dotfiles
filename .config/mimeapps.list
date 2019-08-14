@@ -27,3 +27,6 @@ application/x-extension-shtml=firefox.desktop;
 application/xhtml+xml=firefox.desktop;
 application/x-extension-xhtml=firefox.desktop;
 application/x-extension-xht=firefox.desktop;
+application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;okularApplication_pdf.desktop;
+text/x-bibtex=org.gnome.gedit.desktop;
+text/plain=org.gnome.gedit.desktop;
