@@ -28,8 +28,8 @@ Plugin 'lervag/vimtex'          " make tex document compiled while writing
 Plugin 'shougo/deoplete.nvim'	" autocompletion while working
     let g:deoplete#enable_at_startup = 1
 Plugin 'zchee/deoplete-jedi'
-Plugin 'ervandew/supertab'
-    let g:SuperTabDefaultCompletionType = "<c-n>" 		" Invert Tab order
+" Plugin 'ervandew/supertab'
+"     let g:SuperTabDefaultCompletionType = "<c-n>" 		" Invert Tab order
 Plugin 'tpope/vim-commentary'   " automatically comment stuff out
 Plugin 'SirVer/ultisnips' 		" snippets engin for closely everthing
     let g:UltiSnipsExpandTrigger="<tab>"
@@ -37,12 +37,11 @@ Plugin 'SirVer/ultisnips' 		" snippets engin for closely everthing
     let g:UltiSnipsJumpBackwardTrigger="<c-z>"
     let g:UltiSnipsEditSplit="vertical"
 Plugin 'honza/vim-snippets' 	" snippets dict
-Plugin 'plasticboy/vim-markdown'
-    let g:tex_conceal = ""
-    let g:vim_markdown_math = 1
-    let g:vim_markdown_autowrite = 1
-Plugin 'vimwiki/vimwiki'
-Plugin 'floobits/floobits-neovim'
+" Plugin 'plasticboy/vim-markdown'
+"     let g:tex_conceal = ""
+"     let g:vim_markdown_math = 1
+"     let g:vim_markdown_autowrite = 1
+" Plugin 'vimwiki/vimwiki'
 Plugin 'ntpeters/vim-better-whitespace'
 let g:strip_whitespace_on_save = 1
     let g:better_whitespace_enabled = 1
