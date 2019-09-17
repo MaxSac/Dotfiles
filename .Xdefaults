@@ -1,17 +1,15 @@
 !vim: ft=xdefaults commentstring=!%s
 
 ! URXVT SETTINGS
-URxvt.borderless:             true
-URxvt.scrollBar:              false
-URxvt.saveLines:              2048
-URxvt.keysym.Shift-Control-V: perl:clipboard:paste
-URxvt.keysym.Shift-Control-C: perl:clipboard:copy
-URxvt.transparent:            true
-URxvt.shading:                15
-URxvt.depth:                  32
-URxvt.font: 				  xft:Bitstream Vera Sans Mono:pixelsize=18
+URxvt.borderless:             	true
+URxvt.256-color:             	true
+URxvt.scrollBar:              	false
+URxvt.saveLines:              	2048
+URxvt.keysym.Shift-Control-V: 	perl:clipboard:paste
+URxvt.keysym.Shift-Control-C: 	perl:clipboard:copy
+URxvt.depth:                  	32
+URxvt.font: 			xft:Bitstream Vera Sans Mono:pixelsize=18
 
-URxvt.perl-ext-common:   	  font-size,default,matcher,url-select,keyboard-select
-/* URxvt.perl-ext-common:        default,matcher,font-size, url-select, keyboard-select */
-URxvt.url-launcher: /usr/bin/firefox
-URxvt.matcher.button: 1
+URxvt.perl-ext-common:   	font-size,default,matcher,url-select,keyboard-select
+URxvt.url-launcher: 		/usr/bin/firefox
+URxvt.matcher.button: 		1

@@ -1,0 +1,7 @@
+feh --scale-down \
+    --image-bg black \
+    --sort name \
+    --conversion-timeout -1 \
+    --auto-rotate \
+    --cache-size 128MiB \
+    --title "[%u/%l] %n (%wx%h)"
