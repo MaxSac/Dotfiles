@@ -50,12 +50,17 @@ let g:strip_whitespace_on_save = 1
     let g:better_whitespace_verbosity = 0
     let g:strip_whitespace_confirm = 0
 Plugin 'sirtaj/vim-openscad'
+Plugin 'altercation/vim-colors-solarized'
+
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 " enable syntax processing
 syntax enable
+
+set background=light
+colorscheme solarized
 
 " make ESC reachable for fingers
 inoremap jj <ESC>

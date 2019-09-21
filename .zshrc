@@ -36,7 +36,6 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 # aliases
-alias vim="nvim"
 # activate conda
 . $HOME/miniconda3/etc/profile.d/conda.sh
 # conda activate
