@@ -7,3 +7,5 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 
 alias vim=nvim
+
+alias wttr="curl wttr.in/Dortmund"
