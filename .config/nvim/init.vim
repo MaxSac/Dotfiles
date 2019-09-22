@@ -3,6 +3,8 @@ Plug 'VundleVim/Vundle.vim'
 Plug 'tpope/vim-surround'     " simple set brackets and so on
 Plug 'scrooloose/nerdtree'    " for file manaeging
 Plug 'bling/vim-airline'      " Powerline row for a simpler overview
+Plug 'vim-airline/vim-airline-themes'
+    let g:airline_theme='solarized'
 Plug '907th/vim-auto-save'
     let g:auto_save = 1
     let g:auto_save_events = ["InsertLeave", "TextChanged"]
@@ -45,11 +47,15 @@ let g:strip_whitespace_on_save = 1
     let g:better_whitespace_verbosity = 0
     let g:strip_whitespace_confirm = 0
 Plug 'sirtaj/vim-openscad'
+Plug 'altercation/vim-colors-solarized'
 
 call plug#end()
 
 " enable syntax processing
 syntax enable
+
+set background=light
+colorscheme solarized
 
 " make ESC reachable for fingers
 inoremap jj <ESC>
