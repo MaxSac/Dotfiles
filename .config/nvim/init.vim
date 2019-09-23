@@ -1,19 +1,16 @@
 call plug#begin('~/.local/share/nvim/plugged')
-Plug 'VundleVim/Vundle.vim'
 Plug 'tpope/vim-surround'     " simple set brackets and so on
 Plug 'scrooloose/nerdtree'    " for file manaeging
 Plug 'bling/vim-airline'      " Powerline row for a simpler overview
-Plug 'vim-airline/vim-airline-themes'
-    let g:airline_theme='solarized'
 Plug '907th/vim-auto-save'
     let g:auto_save = 1
     let g:auto_save_events = ["InsertLeave", "TextChanged"]
     let g:auto_save_silent = 1
 Plug 'lervag/vimtex'          " make tex document compiled while writing
-    let g:vimtex_compiler_progname = 'nvr'
-    let g:vimtex_view_mode='zathura'
-    let g:vimtex_view_method='zathura'
-    let g:vimtex_viewer_general='zathura'
+    " let g:vimtex_compiler_progname = 'nvr'
+    " let g:vimtex_view_mode='zathura'
+    " let g:vimtex_view_method='zathura'
+    " let g:vimtex_viewer_general='zathura'
     let g:vimtex_compiler_latexmk = {'build_dir': 'build'}
     let g:vimtex_fold_enabled = 0
     " let g:vimtex_view_automatic = 0
@@ -40,7 +37,7 @@ Plug 'honza/vim-snippets' 	" snippets dict
 "     let g:vim_markdown_autowrite = 1
 " Plugin 'vimwiki/vimwiki'
 Plug 'ntpeters/vim-better-whitespace'
-let g:strip_whitespace_on_save = 1
+    let g:strip_whitespace_on_save = 1
     let g:better_whitespace_enabled = 1
     let g:strip_whitelines_at_eof = 1
     let g:show_spaces_that_precede_tabs = 1
@@ -48,6 +45,14 @@ let g:strip_whitespace_on_save = 1
     let g:strip_whitespace_confirm = 0
 Plug 'sirtaj/vim-openscad'
 Plug 'altercation/vim-colors-solarized'
+Plug 'tpope/vim-dispatch'
+    let g:dispatch_maps = 1
+
+Plug 'chiel92/vim-autoformat'
+
+" themes
+Plug 'vim-airline/vim-airline-themes'
+    let g:airline_theme='solarized'
 
 call plug#end()
 
@@ -60,6 +65,8 @@ colorscheme solarized
 " make ESC reachable for fingers
 inoremap jj <ESC>
 
+" format file
+noremap <C-f> :Autoformat<CR>
 " space open/closes folds
 nnoremap <space> za
 " remove highlighted text
@@ -102,24 +109,24 @@ set ignorecase
 set smartcase
 
 
-hi CursorLineNr
-    \ ctermfg=white
-	\ cterm=bold
-hi SpellBad
-	\ ctermfg=red
-	\ cterm=bold
-	\ ctermbg=None
-hi Pmenu
-    \ ctermbg=8
-    \ guibg=#606060
-hi Folded
-    \ ctermfg=darkgrey
-    \ ctermbg=None
-    \ cterm=bold
-hi Comment
-    \ ctermfg=darkgrey
-    \ ctermbg=None
-    \ cterm=italic
+" hi CursorLineNr
+"     \ ctermfg=white
+" 	\ cterm=bold
+" hi SpellBad
+" 	\ ctermfg=red
+" 	\ cterm=bold
+" 	\ ctermbg=None
+" hi Pmenu
+"     \ ctermbg=8
+"     \ guibg=#606060
+" hi Folded
+"     \ ctermfg=darkgrey
+"     \ ctermbg=None
+"     \ cterm=bold
+" hi Comment
+"     \ ctermfg=darkgrey
+"     \ ctermbg=None
+"     \ cterm=italic
 
 " Some settings for deoplete which is a completation software.
 let g:python3_host_prog = '/usr/bin/python3' "add python path for nvim
