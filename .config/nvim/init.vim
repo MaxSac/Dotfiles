@@ -13,7 +13,6 @@ Plug 'lervag/vimtex'          " make tex document compiled while writing
     " let g:vimtex_viewer_general='zathura'
     let g:vimtex_compiler_latexmk = {'build_dir': 'build'}
     let g:vimtex_fold_enabled = 0
-    " let g:vimtex_view_automatic = 0
     let g:tex_flavor = 'latex'
     let g:vimtex_quickfix_mode = 0
     let g:vimtex_complete_close_braces = 1
@@ -64,6 +63,16 @@ colorscheme solarized
 
 " make ESC reachable for fingers
 inoremap jj <ESC>
+inoremap <expr><C-h>  deoplete#undo_completion()
+inoremap <expr><C-l>  deoplete#complete_common_string()
+inoremap <silent><expr> <TAB>
+    \ pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ deoplete#manual_complete()
+    function! s:check_back_space() abort "{{{
+        let col = col('.') - 1
+        return !col || getline('.')[col - 1]  =~ '\s'
+    endfunction"}}}
 
 " format file
 noremap <C-f> :Autoformat<CR>
