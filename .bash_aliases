@@ -8,4 +8,5 @@ alias ....="cd ../../.."
 
 alias vim=nvim
 
+alias calendar="nvim -c 'Calendar'"
 alias wttr="curl wttr.in/Dortmund"

@@ -1,11 +1,62 @@
 call plug#begin('~/.local/share/nvim/plugged')
-Plug 'tpope/vim-surround'     " simple set brackets and so on
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                          utility                             "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 Plug 'scrooloose/nerdtree'    " for file manaeging
-Plug 'bling/vim-airline'      " Powerline row for a simpler overview
+Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips' 		" snippets engin for closely everthing
+    let g:UltiSnipsExpandTrigger="<tab>"
+    let g:UltiSnipsJumpForwardTrigger="<c-b>"
+    let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+    let g:UltiSnipsEditSplit="vertical"
+Plug 'ntpeters/vim-better-whitespace'
+    let g:strip_whitespace_on_save = 1
+    let g:better_whitespace_enabled = 1
+    let g:strip_whitelines_at_eof = 1
+    let g:show_spaces_that_precede_tabs = 1
+    let g:better_whitespace_verbosity = 0
+    let g:strip_whitespace_confirm = 0
+Plug 'tpope/vim-dispatch'
+    let g:dispatch_maps = 1
+Plug 'chiel92/vim-autoformat'
+Plug 'itchyny/calendar.vim'
+    let g:calendar_google_calendar = 1
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                        operability                           "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+Plug 'shougo/deoplete.nvim'	" autocompletion while working
+    let g:deoplete#enable_at_startup = 1
+Plug 'zchee/deoplete-jedi'
 Plug '907th/vim-auto-save'
     let g:auto_save = 1
     let g:auto_save_events = ["InsertLeave", "TextChanged"]
     let g:auto_save_silent = 1
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'dense-analysis/ale'
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                        appearance                            "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+Plug 'altercation/vim-colors-solarized'
+Plug 'bling/vim-airline'
+    let g:airline#extensions#ale#enabled = 1
+Plug 'vim-airline/vim-airline-themes'
+    let g:airline_theme='solarized'
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                     language specific                        "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+Plug 'sirtaj/vim-openscad'
 Plug 'lervag/vimtex'          " make tex document compiled while writing
     " let g:vimtex_compiler_progname = 'nvr'
     " let g:vimtex_view_mode='zathura'
@@ -18,40 +69,6 @@ Plug 'lervag/vimtex'          " make tex document compiled while writing
     let g:vimtex_complete_close_braces = 1
     let g:vimtex_complete_recursive_bib = 1
     let g:vimtex_main= 'main.tex'
-Plug 'shougo/deoplete.nvim'	" autocompletion while working
-    let g:deoplete#enable_at_startup = 1
-Plug 'zchee/deoplete-jedi'
-" Plugin 'ervandew/supertab'
-"     let g:SuperTabDefaultCompletionType = "<c-n>" 		" Invert Tab order
-Plug 'tpope/vim-commentary'   " automatically comment stuff out
-Plug 'SirVer/ultisnips' 		" snippets engin for closely everthing
-    let g:UltiSnipsExpandTrigger="<tab>"
-    let g:UltiSnipsJumpForwardTrigger="<c-b>"
-    let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-    let g:UltiSnipsEditSplit="vertical"
-Plug 'honza/vim-snippets' 	" snippets dict
-" Plugin 'plasticboy/vim-markdown'
-"     let g:tex_conceal = ""
-"     let g:vim_markdown_math = 1
-"     let g:vim_markdown_autowrite = 1
-" Plugin 'vimwiki/vimwiki'
-Plug 'ntpeters/vim-better-whitespace'
-    let g:strip_whitespace_on_save = 1
-    let g:better_whitespace_enabled = 1
-    let g:strip_whitelines_at_eof = 1
-    let g:show_spaces_that_precede_tabs = 1
-    let g:better_whitespace_verbosity = 0
-    let g:strip_whitespace_confirm = 0
-Plug 'sirtaj/vim-openscad'
-Plug 'altercation/vim-colors-solarized'
-Plug 'tpope/vim-dispatch'
-    let g:dispatch_maps = 1
-
-Plug 'chiel92/vim-autoformat'
-
-" themes
-Plug 'vim-airline/vim-airline-themes'
-    let g:airline_theme='solarized'
 
 call plug#end()
 
@@ -117,26 +134,6 @@ set conceallevel=2
 set ignorecase
 set smartcase
 
-
-" hi CursorLineNr
-"     \ ctermfg=white
-" 	\ cterm=bold
-" hi SpellBad
-" 	\ ctermfg=red
-" 	\ cterm=bold
-" 	\ ctermbg=None
-" hi Pmenu
-"     \ ctermbg=8
-"     \ guibg=#606060
-" hi Folded
-"     \ ctermfg=darkgrey
-"     \ ctermbg=None
-"     \ cterm=bold
-" hi Comment
-"     \ ctermfg=darkgrey
-"     \ ctermbg=None
-"     \ cterm=italic
-
 " Some settings for deoplete which is a completation software.
-let g:python3_host_prog = '/usr/bin/python3' "add python path for nvim
-" let g:python2_host_prog = '/usr/bin/python2' "add python path for nvim
+let g:python3_host_prog = '/usr/bin/python3'
+let g:python2_host_prog = '/usr/bin/python2'
