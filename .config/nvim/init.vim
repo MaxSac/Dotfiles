@@ -23,6 +23,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'chiel92/vim-autoformat'
 Plug 'itchyny/calendar.vim'
     let g:calendar_google_calendar = 1
+Plug 'christoomey/vim-tmux-navigator'
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -95,13 +96,24 @@ inoremap <silent><expr> <TAB>
 noremap <C-f> :Autoformat<CR>
 " space open/closes folds
 nnoremap <space> za
-" remove highlighted text
-nnoremap <silent> <C-r> :nohl<CR>
+
+
 " move vim splits
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+tnoremap <C-h> <C-\><C-N><C-w>h
+tnoremap <C-j> <C-\><C-N><C-w>j
+tnoremap <C-k> <C-\><C-N><C-w>k
+tnoremap <C-l> <C-\><C-N><C-w>l
+inoremap <C-h> <C-\><C-N><C-w>h
+inoremap <C-j> <C-\><C-N><C-w>j
+inoremap <C-k> <C-\><C-N><C-w>k
+inoremap <C-l> <C-\><C-N><C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+" escape vim terminal
+tnoremap <Esc> <C-\><C-n>
+
 
 map <C-n> :NERDTreeToggle<CR>
 map <C-s> :set spell<CR>
@@ -137,3 +149,5 @@ set smartcase
 " Some settings for deoplete which is a completation software.
 let g:python3_host_prog = '/usr/bin/python3'
 let g:python2_host_prog = '/usr/bin/python2'
+
+packadd termdebug
